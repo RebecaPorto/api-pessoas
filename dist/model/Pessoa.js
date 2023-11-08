@@ -9,7 +9,7 @@ class Pessoa {
     endereco;
     altura;
     peso;
-    //metodo construtor
+    //metodo contrutor
     constructor(_nome, _cpf, _data_nascimento, _telefone, _endereco, _altura, _peso) {
         this.nome = _nome;
         this.cpf = _cpf;
@@ -22,13 +22,13 @@ class Pessoa {
     getNome() {
         return this.nome;
     }
-    setnome(_nome) {
+    setNome(_nome) {
         this.nome = _nome;
     }
-    getcpf() {
+    getCPF() {
         return this.cpf;
     }
-    setcpf(_cpf) {
+    setCPF(_cpf) {
         this.cpf = _cpf;
     }
     getdata_nascimento() {
@@ -57,21 +57,37 @@ class Pessoa {
     }
     mostraPessoa() {
         console.log(`Nome: ${this.nome}
-    cpf: ${this.cpf}
-    data: ${this.data_nascimento}
-    telefone: ${this.telefone}
-    endereco: ${this.endereco}
-    altura: ${this.altura}
-    peso:${this.peso} `);
+        CPF: ${this.nome}
+        Data: ${this.data_nascimento}
+        Telefone:: ${this.telefone}
+        Endereço: ${this.endereco}
+        Altura ${this.altura}
+        Peso ${this.peso}`);
     }
-    //implementar os metodos
     falar() {
-        //logica de negocio
-        console.log(`${this.nome} esta falando`);
+        console.log(`${this.nome} está falando`);
     }
     falarFrase(_frase) {
-        //logica de negocio
         console.log(`${this.nome} fala: ${_frase}`);
+    }
+    andar() {
+        console.log(`${this.nome} está andando...`);
+    }
+    andarQuilometros(_quilometros) {
+        setTimeout(() => {
+            console.log(`${this.nome} caminhou ${_quilometros} quilometros`);
+        }, 3000);
+    }
+    comer() {
+        console.log(`${this.nome} está comendo...`);
+    }
+    comerPrato(_prato) {
+        console.log(`${this.nome} está comendo ${_prato}`);
+    }
+    /** CRUD */
+    cadastroPessoa(baninha) {
+        //persistindo os dados
+        console.log(`${baninha.nome} cadastrado com sucesso`);
     }
 }
 exports.Pessoa = Pessoa;
